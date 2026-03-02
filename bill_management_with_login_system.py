@@ -25,48 +25,47 @@ def login():
 
         def total():
             try:
-                a1 = int(sandwich.get())
+                sandwich_1 = int(sandwich.get())
             except:
-                a1 = 0
+                sandwich_1 = 0
 
             try:
-                    a2 = int(cookies.get())
+                    cookies_2 = int(cookies.get())
             except:
-                a2 = 0
+                cookies_2 = 0
 
             try:
-                a3 = int(tea.get())
+                tea_3 = int(tea.get())
             except:
-                a3 = 0
+                tea_3 = 0
 
             try:
-                a4 = int(coffee.get())
+                coffee_4 = int(coffee.get())
             except:
-                a4 = 0
+                coffee_4 = 0
 
             try:
-                a5 = int(juice.get())
+                juice_5 = int(juice.get())
             except:
-                a5 = 0
+                juice_5 = 0
 
             try:
-                a6 = int(pancakes.get())
+                pancakes_6 = int(pancakes.get())
             except:
-                a6 = 0
+                pancakes_6 = 0
 
             try:
-                a7 = int(pastery.get())
+                pastery_7 = int(pastery.get())
             except:
-                a7 = 0
+                pastery_7 = 0
 
-            c1 = 60 * a1
-            c2 = 30 * a2
-            c3 = 7 * a3
-            c4 = 100 * a4
-            c5 = 20 * a5
-            c6 = 15 * a6
-            c7 = 7 * a7
-
+            cost_1 = 60 * sandwich_1
+            cost_2 = 30 * cookies_2
+            cost_3 = 7 * tea_3
+            cost_4 = 100 * coffee_4
+            cost_5 = 20 * juice_5
+            cost_6 = 15 * pancakes_6
+            cost_7 = 7 * pastery_7
 
             lbl_total = Label(f2, font=('Arial', 20, 'bold'), text="Total", width=22, fg="lightyellow", bg="black")
             lbl_total.place(x=0, y=50)
@@ -105,6 +104,7 @@ def login():
 
         f1 = Frame(root, bg="lightyellow", highlightbackground="black", highlightthickness=1, width=370, height=400)
         f1.pack(pady=30)
+
         sandwich = StringVar()
         cookies = StringVar()
         tea = StringVar()
@@ -149,7 +149,6 @@ def login():
         btn_reset = Button(f1, bd=5, fg="black", bg="lightblue", font=("arial", 16, "bold"), width=10, text="Reset",
                        command=reset)
         btn_reset.grid(row=8, column=0)
-
         btn_total = Button(f1, bd=5, fg="black", bg="lightblue", font=("arial", 16, "bold"), width=10, text="Total",
                        command=total)
         btn_total.grid(row=8, column=1)
@@ -166,8 +165,6 @@ def login():
         messagebox.showerror("Invalid","Please enter valid username")
     elif code!="1234":
         messagebox.showerror("Invalid","Please enter valid password")
-
-
 
 def main_screen():
     global screen
@@ -196,8 +193,10 @@ def main_screen():
 
     Label(mainframe,text="Username",font=("arial",30,"bold"),bg="#d7dae2").place(x=100,y=50)
     Label(mainframe, text="Password", font=("arial",30, "bold"), bg="#d7dae2").place(x=100, y=150)
+
     username = StringVar()
     password = StringVar()
+
     entry_username=Entry(mainframe,textvariable=username,width=12,bd=2,font=("arial",30))
     entry_username.place(x=400,y=50)
     entry_password=Entry(mainframe,textvariable=password,width=12,bd=2,font=("arial",30),show="*")
@@ -210,4 +209,5 @@ def main_screen():
     Button(mainframe, text="Reset", height="2", width=23, bg="#1089ff", fg="white", bd=0,command=reset).place(x=300, y=250)
     Button(mainframe, text="Exit", height="2", width=23, bg="#00bd56", fg="white", bd=0,command=screen.destroy).place(x=500, y=250)
     screen.mainloop()
+    
 main_screen()
